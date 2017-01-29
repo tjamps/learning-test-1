@@ -1,0 +1,16 @@
+{
+    "name": "learning/cours1",
+    "description": "premier cours du learning-test lv",
+    "authors": [
+        {
+            "name": "holoflins",
+            "email": "hulot.morgan@neuf.fr"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "" : "src/"
+        }
+    },
+    "require": {}
+}
