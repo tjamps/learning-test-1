@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class FirstTest extends TestCase
 {
+    /** @group testNumber */
     public function testFirst()
     {
     }

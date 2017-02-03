@@ -1,11 +1,12 @@
 <?php
 
-namespace tests\Lib;
+namespace tests\OtherLib;
 
 use PHPUnit\Framework\TestCase;
 
 class BeforeTest extends TestCase
 {
+    /** @group testNumber */
     public function testSecond()
     {
     }

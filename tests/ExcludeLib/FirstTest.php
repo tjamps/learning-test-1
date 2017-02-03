@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\OtherLib;
+namespace tests\ExcludeLib;
 
 use PHPUnit\Framework\TestCase;
 
