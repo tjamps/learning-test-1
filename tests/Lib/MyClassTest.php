@@ -16,14 +16,16 @@ class MyClassTest extends TestCase
 
     public function setUp()
     {
-        $this->config = ['link' => 'value'];
+        $this->config = [];
         $this->myFakeClass = new MyFakeClass();
     }
 
-    public function testMyMethodWithGoodKey()
+    /**
+     * @dataProvider myMethodProvider
+     */
+    public function testMyMethod($key, $value, $expected)
     {
-        $key = 'link';
-        $expected = 'value';
+        $this->config[$key] = $value;
 
         $myClass = $this->init();
         $result = $myClass->myMethod($key);
@@ -31,26 +33,13 @@ class MyClassTest extends TestCase
         $this->assertSame($expected, $result);
     }
 
-    public function testMyMethodWithFalseKey()
+    public function myMethodProvider()
     {
-        $key = 'false';
-
-        $myClass = $this->init();
-        $result = $myClass->myMethod($key);
-
-        $this->assertNull($result);
-    }
-
-    public function testMyMehodWithMorganKey()
-    {
-        $this->config['morgan'] = 'ajoutez ici un GENTIL commentaire';
-        $key = 'morgan';
-        $expected = 'gros mégalo';
-
-        $myClass = $this->init();
-        $result = $myClass->myMethod($key);
-
-        $this->assertSame($expected, $result);
+        return [
+            ['link', 'value', 'value'],
+            [null, null, null],
+            ['morgan', 'morgan', 'gros mégalo'],
+        ];
     }
 
     private function init()
