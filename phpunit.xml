@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit colors="true"
+         bootstrap="vendor/autoload.php"
+>
+    <testsuites>
+        <testsuite name="test">
+            <directory>tests/Lib</directory>
+            <directory>tests/OtherLib</directory>
+        </testsuite>
+        <testsuite name="exclude">
+            <directory>tests/ExcludeLib</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
