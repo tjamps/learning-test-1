@@ -27,15 +27,18 @@ class MyClassTest extends TestCase
 
         $myClass = $this->init();
         $result = $myClass->myMethod($key);
+
+        $this->assertSame($expected, $result);
     }
 
     public function testMyMethodWithFalseKey()
     {
         $key = 'false';
-        $expected = null;
 
         $myClass = $this->init();
         $result = $myClass->myMethod($key);
+
+        $this->assertNull($result);
     }
 
     public function testMyMehodWithMorganKey()
@@ -46,6 +49,8 @@ class MyClassTest extends TestCase
 
         $myClass = $this->init();
         $result = $myClass->myMethod($key);
+
+        $this->assertSame($expected, $result);
     }
 
     private function init()
