@@ -25,8 +25,8 @@ class MyClassTest extends TestCase
         $key = 'link';
         $expected = 'value';
 
-        // on lance l'action
-        // on vérifie le résultat
+        $myClass = $this->init();
+        $result = $myClass->myMethod($key);
     }
 
     public function testMyMethodWithFalseKey()
@@ -34,8 +34,8 @@ class MyClassTest extends TestCase
         $key = 'false';
         $expected = null;
 
-        // on lance l'action
-        // on vérifie le résultat
+        $myClass = $this->init();
+        $result = $myClass->myMethod($key);
     }
 
     public function testMyMehodWithMorganKey()
@@ -44,7 +44,12 @@ class MyClassTest extends TestCase
         $key = 'morgan';
         $expected = 'gros mégalo';
 
-        // on lance l'action
-        // on vérifie le résultat
+        $myClass = $this->init();
+        $result = $myClass->myMethod($key);
+    }
+
+    private function init()
+    {
+        return new Myclass($this->myFakeClass, $this->config);
     }
 }
