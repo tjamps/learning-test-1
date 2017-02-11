@@ -25,6 +25,22 @@ class Session
     }
 
     /**
+     * @param \DateTime $date
+     */
+    public function setDate(\DateTime $date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
      * @param Training $training
      */
     public function setTraining(Training $training)

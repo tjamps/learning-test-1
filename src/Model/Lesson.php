@@ -62,7 +62,7 @@ class Lesson
     /**
      * @param int $position
      */
-    public function setPostion($position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }
